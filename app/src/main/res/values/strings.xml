@@ -1,0 +1,69 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+
+    <string name="app_name">最新闻</string>
+    <string name="action_settings">设置</string>
+    <string name="content_authority">cn.wjh1119.bestnews</string>
+    <string name="sync_account_type">Bestnews.wjh1119.cn</string>
+
+    //DetailActiviy 相关
+    <string name="title_activity_detail">详细</string>
+    <string name="detail_image_transition_name">TN_DetailImage</string>//动画
+
+    //ListFragment相关
+    <string name="error_list_default">获取新闻数据失败，请重新尝试</string>
+    <string name="error_list_no_item">没有新闻数据，请刷新获取</string>
+    <string name="error_list_no_network">无网络连接</string>
+    <string name="error_list_server_down">无法更新新闻，服务器未返回数据</string>
+    <string name="error_list_server_error">无法更新新闻，服务器返回错误数据,请下载最新版软件</string>
+    <string name="error_list_invalid">无法更新当前频道的新闻，请重启软件</string>
+
+    //ReviewFragment相关
+    <string name="review_number_text"><xliff:g id="number">%1$s</xliff:g>楼</string>
+
+    //RefreshHeaderView相关
+    <string name="refresh_header_view_onrefresh">正在拼命加载数据...</string>
+    <string name="refresh_header_view_release">释放刷新</string>
+    <string name="refresh_header_view_swipe">下拉刷新</string>
+    <string name="refresh_header_view_return">正在返回</string>
+    <string name="refresh_header_view_complete">结束刷新</string>
+
+    //LoadMoreFooterView相关
+    <string name="load_more_footer_view_onloadmore">正在拼命加载数据...</string>
+    <string name="load_more_footer_view_release">释放加载</string>
+    <string name="load_more_footer_view_swipe">上拉加载</string>
+    <string name="load_more_footer_view_return">正在返回</string>
+    <string name="load_more_footer_view_onrelease">正在加载</string>
+    <string name="load_more_footer_view_complete">结束加载</string>
+
+    //pref,后台更新
+    <string name="pref_sync_interval_key">syncInterval</string>
+    <string name="pref_sync_interval_default">24</string>
+
+    //pref,存储是否显示双fragment
+    <string name="pref_istwopane_key">istwopane</string>
+
+    //pref,服务器状态
+    <string name="pref_newdata_status_key">newdata-status</string>
+
+    //默认频道
+    <string name="pref_channels_key">newChannelJson</string>
+    <string name="pref_channel_initialized_key">initialized</string>
+    <string name="pref_channel_initialized_count">10</string>
+    <string name="default_channel1">国内焦点</string>
+    <string name="default_channel2">国际焦点</string>
+    <string name="default_channel3">军事焦点</string>
+    <string name="default_channel4">财经焦点</string>
+    <string name="default_channel5">互联网焦点</string>
+    <string name="default_channel6">房产焦点</string>
+    <string name="default_channel7">汽车焦点</string>
+    <string name="default_channel8">体育焦点</string>
+    <string name="default_channel9">娱乐焦点</string>
+    <string name="default_channel10">游戏焦点</string>
+    <string name="pref_channel_initialized_hint">请重启程序可获取所有频道新闻</string>
+
+    //设置相关
+    <string name="action_delete_cache">清除缓存</string>
+    <string name="action_delete_cache_hint_success">成功清除缓存</string>
+    <string name="action_delete_cache_hint_fail">清除缓存失败</string>
+
+</resources>

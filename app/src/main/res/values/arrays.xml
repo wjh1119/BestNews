@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="default_channels">
+        <item>@string/default_channel1</item>
+        <item>@string/default_channel2</item>
+        <item>@string/default_channel3</item>
+        <item>@string/default_channel4</item>
+        <item>@string/default_channel5</item>
+        <item>@string/default_channel6</item>
+        <item>@string/default_channel7</item>
+        <item>@string/default_channel8</item>
+        <item>@string/default_channel9</item>
+        <item>@string/default_channel10</item>
+    </string-array>
+
+</resources>

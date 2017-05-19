@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_include_list_item_new_other_info_height"
+    android:layout_gravity="bottom">
+
+    <TextView
+        android:id="@+id/tv_list_item_pubdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="@dimen/list_tv_item_pubdate_text_size"
+        tools:text="2017.1.1 10:10:10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_list_item_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_tv_item_source_text_size"
+        tools:text="新浪"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tv_list_item_pubdate"
+        android:layout_toEndOf="@+id/tv_list_item_pubdate"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp" />
+
+    <ImageView
+        android:id="@+id/iv_list_item_review_image"
+        android:layout_width="@dimen/list_tv_item_review_image_width"
+        android:layout_height="@dimen/list_tv_item_review_image_height"
+        android:layout_alignBottom="@+id/tv_list_item_content"
+        android:layout_toLeftOf="@+id/tv_list_item_content"
+        android:layout_toStartOf="@+id/tv_list_item_content"
+        android:layout_marginRight="@dimen/list_tv_item_review_image_margin_end"
+        android:layout_marginEnd="@dimen/list_tv_item_review_image_margin_end" />
+
+    <TextView
+        android:id="@+id/tv_list_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_tv_item_content_text_size"
+        tools:text="12"/>
+</RelativeLayout>
