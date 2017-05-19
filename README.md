@@ -25,4 +25,12 @@
 - [CircleImageView](https://github.com/hdodenhof/CircleImageView)
 - [eventbus](https://github.com/greenrobot/EventBus)
 
+## 注意
+因版权原因，本项目不提供api key。
+若运行时遇到以下错误：
 
+    Error:(150, 67) 错误: 找不到符号
+    符号:   变量 MY_SHOWAPI_NEWS_API_KEY
+    位置: 类 BuildConfig
+
+只需于[易源数据新闻API接口](https://www.showapi.com/api/lookPoint/109)申请API_KEY，并配置好gradle替换以上变量即可。
