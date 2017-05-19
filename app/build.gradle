@@ -19,7 +19,7 @@ android {
         }
     }
     buildTypes.each {
-        it.buildConfigField 'String', 'MyShowapiNewsApiKey', MyShowapiNewsApiKey
+        it.buildConfigField 'String', 'MY_SHOWAPI_NEWS_API_KEY', MyShowapiNewsApiKey
     }
 }
 

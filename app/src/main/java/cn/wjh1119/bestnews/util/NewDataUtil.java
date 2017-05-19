@@ -107,7 +107,7 @@ public class NewDataUtil {
 
         String BASE_URL = "http://route.showapi.com/109-35";
         final String appid = "34508";//要替换成自己的
-        final String secret = BuildConfig.MyShowapiNewsApiKey;
+        final String secret = BuildConfig.MY_SHOWAPI_NEWS_API_KEY;
 
         final String newsJsonStr = new ShowApiRequest(BASE_URL, appid, secret)
                 .addTextPara("channelId", "")
