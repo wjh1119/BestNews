@@ -112,9 +112,8 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Logger.d(LOG_TAG, "onCreateView " + mChannelName);
 
-        prefUtil = new PrefUtil(getContext());
+        prefUtil = PrefUtil.getInstance(getContext());
         //根据是否双屏设置变量
         int mChoiceMode;
         if (prefUtil.getIsTwoPane()) {
@@ -145,6 +144,7 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
 
         int numberOfFragment = getArguments() != null ? getArguments().getInt("number") : 0;
         mChannelName = prefUtil.getBestNewsChannels().get(numberOfFragment);
+        Logger.d(LOG_TAG, "onCreateView " + mChannelName);
 
         if (savedInstanceState != null) {
             mAdapter.onRestoreInstanceState(savedInstanceState);
@@ -162,7 +162,7 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
 
         mListModeManager = new ListModeManager(mSwipeToLoadLayout);
 
-        prefUtil = new PrefUtil(getContext());
+        prefUtil = PrefUtil.getInstance(getContext());
 
         return mSwipeToLoadLayout;
     }

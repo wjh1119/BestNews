@@ -169,7 +169,7 @@ public class NewDataUtil {
             imageManager = ImageManager.getSingleton(context);
         }
 
-        PrefUtil prefUtil = new PrefUtil(context);
+        PrefUtil prefUtil = PrefUtil.getInstance(context);
         //重置服务器状态
         prefUtil.resetNewDataStatus();
 
@@ -323,7 +323,7 @@ public class NewDataUtil {
         final String OWM_SITE = "site";
         final String OWM_CONTENT = "content";
 
-        PrefUtil prefUtil = new PrefUtil(context);
+        PrefUtil prefUtil = PrefUtil.getInstance(context);
 
         ArrayList<ReviewBean> reviewsData
                 = new ArrayList<>();
