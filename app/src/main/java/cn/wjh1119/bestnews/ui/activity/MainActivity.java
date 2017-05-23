@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         Uri contentUri = getIntent() != null ? getIntent().getData() : null;
 
-        mPrefUtil = new PrefUtil(this);
+        mPrefUtil = PrefUtil.getInstance(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_detail);
         setSupportActionBar(toolbar);
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         BestNewsSyncAdapter.initializeSyncAdapter(this);
 
-        mPrefUtil = new PrefUtil(this);
+        mPrefUtil = PrefUtil.getInstance(this);
     }
 
     @Override

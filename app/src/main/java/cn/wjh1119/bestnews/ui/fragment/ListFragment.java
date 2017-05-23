@@ -73,17 +73,6 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
     FetchNewDataTask fetchNewDataTask;
 
     private ListModeManager mListModeManager;
-//    //当前页，从1开始
-//    private int currentPage = 1;
-//    //已经加载出来的Item的数量
-//    private int totalItemCount;
-//    //主要用来存储上一个totalItemCount
-//    private int previousTotal = 0;
-//
-//    private int mSwipeToLoadLayoutMode = 0;
-//    private final int SWIPETOLOADLAYOUT_NONE = 0;
-//    private final int SWIPETOLOADLAYOUT_REFRESH = 1;
-//    private final int SWIPETOLOADLAYOUT_LOAD = 2;
 
     @BindView(R.id.swipe_target)
     RecyclerView mRecyclerView;
@@ -112,9 +101,8 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Logger.d(LOG_TAG, "onCreateView " + mChannelName);
 
-        prefUtil = new PrefUtil(getContext());
+        prefUtil = PrefUtil.getInstance(getContext());
         //根据是否双屏设置变量
         int mChoiceMode;
         if (prefUtil.getIsTwoPane()) {
@@ -145,6 +133,7 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
 
         int numberOfFragment = getArguments() != null ? getArguments().getInt("number") : 0;
         mChannelName = prefUtil.getBestNewsChannels().get(numberOfFragment);
+        Logger.d(LOG_TAG, "onCreateView " + mChannelName);
 
         if (savedInstanceState != null) {
             mAdapter.onRestoreInstanceState(savedInstanceState);
@@ -162,7 +151,7 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
 
         mListModeManager = new ListModeManager(mSwipeToLoadLayout);
 
-        prefUtil = new PrefUtil(getContext());
+        prefUtil = PrefUtil.getInstance(getContext());
 
         return mSwipeToLoadLayout;
     }
@@ -220,6 +209,13 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mRecyclerView.setAdapter(null);
+        mAdapter = null;
+//        if (fetchNewDataTask != null &&
+//                fetchNewDataTask.getStatus() == AsyncTask.Status.RUNNING) {
+//            fetchNewDataTask.cancel(true);
+//        }
+//        mListModeManager.onDataStatusError();
         Logger.d(LOG_TAG, "onDestroyView channelName is " + mChannelName);
     }
 
@@ -255,8 +251,10 @@ public class ListFragment extends Fragment implements LoaderManager.LoaderCallba
         int totalItemCount = data.getCount();
         mListModeManager.onUpdateDataFinished(totalItemCount);
         mCursor = data;
-        //为适配器设置游标
-        mAdapter.setCursor(mCursor);
+        //
+        if (mAdapter != null){
+            mAdapter.setCursor(mCursor);
+        }
 
         if (totalItemCount == 0) {
             if (getActivity() != null) {

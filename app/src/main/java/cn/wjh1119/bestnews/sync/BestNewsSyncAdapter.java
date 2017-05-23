@@ -48,7 +48,7 @@ public class BestNewsSyncAdapter extends AbstractThreadedSyncAdapter {
             return;
         }
 
-        PrefUtil prefUtil = new PrefUtil(getContext());
+        PrefUtil prefUtil = PrefUtil.getInstance(getContext());
         //删除所有本地缓存
         FileUtil.getInstance(getContext().getApplicationContext()).deleteFile();
         Logger.d(LOG_TAG,"delete all local cache");

@@ -22,10 +22,23 @@ import static cn.wjh1119.bestnews.util.NewDataUtil.NEWDATA_STATUS_UNKNOWN;
 
 public class PrefUtil {
 
+    private static volatile PrefUtil instance;
+
     private Context mContext;
 
-    public PrefUtil(Context context){
-        mContext = context;
+    private PrefUtil(Context context) {
+        this.mContext = context;
+    }
+
+    public static PrefUtil getInstance(Context context) {
+        if (instance == null) {
+            synchronized (PrefUtil.class) {
+                if (instance == null) {
+                    instance = new PrefUtil(context.getApplicationContext());
+                }
+            }
+        }
+        return instance;
     }
 
 //    /**

@@ -51,7 +51,7 @@ class ListRecyclerViewAdapter extends RecyclerView.Adapter<ListRecyclerViewAdapt
         mICM = new ListItemChoiceManager(this);
         mICM.setChoiceMode(choiceMode);
         mImageManager = ImageManager.getSingleton(mContext);
-        mPrefUtil = new PrefUtil(mContext);
+        mPrefUtil = PrefUtil.getInstance(mContext);
     }
 
     @Override
